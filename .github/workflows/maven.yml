@@ -57,9 +57,9 @@ jobs:
     - name: Building container
       run: docker build -t my-apache2 .
     - name: run Docker
-      run: docker run -d -p 123:123 --name docker-apache -d my-apache2
+      run: docker run -d --name docker-apache -d my-apache2
     - name: check server
-      run: curl http://localhost:123/index.php
+      run: curl http://localhost/index.php
     - name: Install Google Chrome
       run: |
             chmod +x ./scripts/InstallChrome.sh

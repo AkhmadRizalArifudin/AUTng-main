@@ -1,4 +1,3 @@
 "# AUTng" 
 tes login
-klik home
-klik profile
+tes klik

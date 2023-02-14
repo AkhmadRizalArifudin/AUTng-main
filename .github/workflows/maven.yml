@@ -59,7 +59,11 @@ jobs:
     - name: run Docker
       run: docker run -d -p 80:80 --name docker-apache -d my-apache2
     - name: check server
-      run: curl http://localhost:80/index.php
+      run: |
+            curl http://localhost:80/index.php
+            cd ./AUT
+            ls
+            cd ~
     - name: Install Google Chrome
       run: |
             chmod +x ./scripts/InstallChrome.sh
@@ -79,6 +83,7 @@ jobs:
         cache: maven
     - name: Run Selenium Script
       run: | 
+            cd ./AUT
             mvn test
     - name: Stop Docker
       run: docker stop docker-apache
